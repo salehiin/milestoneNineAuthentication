@@ -1,10 +1,14 @@
+import { Link } from "react-router-dom";
 
 
 
 const Header = () => {
     return(
         <div>
-            <h2>This is Header</h2>
+            <div>
+            <Link className="mr-2" to="/">Home</Link>
+            <Link to="/login">Login</Link>
+            </div>
         </div>
     );
 };
