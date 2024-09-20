@@ -1,7 +1,8 @@
-import { getAuth, GoogleAuthProvider, signInWithPopup, signOut } from "firebase/auth";
-import { Link } from "react-router-dom";
+import { getAuth, GithubAuthProvider, GoogleAuthProvider, signInWithPopup, signOut } from "firebase/auth";
+// import { Link } from "react-router-dom";
 import app from "../../firebase/firebase.init";
 import { useState } from "react";
+// import { GithubAuthProvider } from "firebase/auth";
 
 
 
@@ -9,17 +10,30 @@ const Login = () => {
     const [user, setUser] = useState(null);
     const auth = getAuth(app);
     // console.log(app);
-    const provider = new GoogleAuthProvider();
+    const googleProvider = new GoogleAuthProvider();
+    const githubProvide = new GithubAuthProvider();
 
     const handleGoogleSignIn = () => {
-        signInWithPopup(auth, provider)
+        signInWithPopup(auth, googleProvider)
         .then(result => {
             const loggedInUser = result.user;
-            console.log(user);
+            console.log(loggedInUser);
             setUser(loggedInUser);
         })
         .catch(error => {
             console.log('error', error.message)
+        })
+    }
+
+    const handleGithubSignIn = () =>{
+        signInWithPopup(auth, githubProvide)
+        .then(result => {
+            const loggedInUser = result.user;
+            console.log(loggedInUser);
+            setUser(loggedInUser);
+        }) 
+        .catch(error => {
+            console.log(error)
         })
     }
     
@@ -38,7 +52,10 @@ const Login = () => {
         <div>
             {   user ?
             <button onClick={handleSignOut}>Sign Out</button> :
-            <button onClick={handleGoogleSignIn}>Google login</button>
+            <div>
+                <button onClick={handleGoogleSignIn}>Google login</button>
+                <button onClick={handleGithubSignIn}>Github Login</button>
+            </div>
             }
             {user && <div>
                 <h3>User: {user?.displayName}</h3>
