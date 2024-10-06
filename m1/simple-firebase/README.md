@@ -8,7 +8,7 @@ Currently, two official plugins are available:
 - [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
 
-# const Main = () => {
+const Main = () => {
     return(
         <div>
             
@@ -17,4 +17,51 @@ Currently, two official plugins are available:
 };
 export default Main;
 
-# 49.6 - 0
+# 49.7 - Recap of firebase Google authentication
+
+# 50.1 - project setup
+# 50.2 - form ready, register page, find form data
+# 50.3 - 
+
+
+
+
+
+
+
+# 1. npm create vite@latest name-of-your-project -- --template react
+# 2. npm install react-router-dom # always need this!
+# 3. npm install localforage match-sorter sort-by
+
+# 4. tailwind css - https://tailwindcss.com/docs/guides/vite
+   - npm install -D tailwindcss postcss autoprefixer
+   - npx tailwindcss init -p
+   - content: [
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}",
+  ],
+  - 
+    @tailwind base;
+    @tailwind components;
+    @tailwind utilities;
+
+# 5. daisyUI - https://daisyui.com/docs/install/
+    - npm i -D daisyui@latest
+    - plugins: [require('daisyui')]
+
+# 6. clean App.jsx
+# 7. setup route in main.jsx
+    - import {
+      createBrowserRouter,
+      RouterProvider,
+      } from "react-router-dom";
+    - const router = createBrowserRouter([
+        {
+            path: "/",
+            element: <div>Hello world!</div>,
+        },
+        ]);
+
+    - <RouterProvider router={router} />
+
+# 8.         
