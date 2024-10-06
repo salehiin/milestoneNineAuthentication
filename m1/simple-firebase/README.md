@@ -21,7 +21,8 @@ export default Main;
 
 # 50.1 - project setup
 # 50.2 - form ready, register page, find form data
-# 50.3 - 
+# 50.3 - how to use firebase, create user
+# 50.4 - registration error handle, email - password field validation
 
 
 
