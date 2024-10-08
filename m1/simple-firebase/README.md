@@ -23,7 +23,10 @@ export default Main;
 # 50.2 - form ready, register page, find form data
 # 50.3 - how to use firebase, create user
 # 50.4 - registration error handle, email - password field validation
-
+# 50.5 - /[A-Z]/.test('asdfasf') - Reguler Expression, password show/hide, useState - to clear check frequently, react icon
+# 50.6 - show-hide button position, checkbox - accept terms and conditions, login functionallity
+# 50.7 - login success - error, login/register toggle, forgot password - watch again to clear
+# 50.8 - verify email when create account, 
 
 
 

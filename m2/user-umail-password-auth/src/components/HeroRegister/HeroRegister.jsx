@@ -1,23 +1,46 @@
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import auth from "../../firebase/firebase.config";
 import { useState } from "react";
+import { RxEyeOpen, RxEyeNone } from "react-icons/rx";
 
 
 const HeroRegister = () => {
     const [heroRegisterError, setHeroRegisterError] = useState('');
     const [heroSuccess, setHeroSuccess] = useState('');
+    const [heroShowPassword, setHeroShowPassword] = useState(false);
 
     const handleHeroRegister = e =>{
         e.preventDefault();
         const email = e.target.email.value;
         const password = e.target.password.value;
-        console.log(email, password)
+        const accepted = e.target.terms.checked;
+        console.log(email, password, accepted)
 
         setHeroRegisterError('');
         setHeroSuccess('');
 
         if(password.length < 6){
             setHeroRegisterError('Password should be at least 6 characters.')
+            return;
+        }
+        else if(!/[A-Z]/.test(password)){
+            setHeroRegisterError('Your password should have one uppercase chracter')
+            return;
+        }
+        else if(!/[a-z]/.test(password)){
+            setHeroRegisterError('Your password should have one lowercase chracter')
+            return;
+        }
+        else if(!/[0-9]/.test(password)){
+            setHeroRegisterError('Your password should have one number')
+            return;
+        }
+        else if(!/[^A-Za-z0-9_]/.test(password)){
+            setHeroRegisterError('Your password should have special charecter')
+            return;
+        }
+        else if(!accepted){
+            setHeroRegisterError('Please accept our terms and conditions!')
             return;
         }
 
@@ -57,11 +80,27 @@ const HeroRegister = () => {
                                 <label className="label">
                                     <span className="label-text">Password</span>
                                 </label>
-                                <input type="password" placeholder="password" name="password" className="input input-bordered" required />
+                                <input 
+                                    type={heroShowPassword ? "text" : "password"} 
+                                    placeholder="password" 
+                                    name="password" 
+                                    className="input input-bordered" 
+                                    required />
+                                <span onClick={() =>setHeroShowPassword(!heroShowPassword)}>
+                                    {
+                                        heroShowPassword ? <RxEyeNone></RxEyeNone> : <RxEyeOpen></RxEyeOpen>
+                                    }
+                                </span>    
                                 <label className="label">
                                     <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
                                 </label>
                             </div>
+                            <br />
+                    <div className="mb-2">
+                        <input type="checkbox" name="terms" id="terms" />
+                        <label className="ml-2" htmlFor="terms">Accept our <a href="">Terms and Conditions</a></label>
+                    </div>
+                    <br />
                             <div className="form-control mt-6">
                                 <input className="btn btn-secondary w-3/4" type="submit" value="Register" />
                             </div>
