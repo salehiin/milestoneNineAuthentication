@@ -28,6 +28,18 @@ export default Main;
 # 50.7 - login success - error, login/register toggle, forgot password - watch again to clear
 # 50.8 - verify email when create account, account create with name
 
+        <!-- BASIC LOGIN PASSWORD - full module have to do several times -->
+# 51.1 - firebase, react-router project setup
+# 51.2 - login, register
+# 51.3 - createContext to provide an , create autProvider context - didn't clear
+# 51.4 - 02:00(important), createUserWithEmailAndPassword(auth, email, password) - very important to watch again to clear
+# 51.5 - login, register, useEffect - observing if any user login(observe auth state change) - very important to watch again to clear
+# 51.6 - user show user in Navbar, sign out
+# 51.7 - private route, routes, !user navigate to login page, after reload privateRoute goes to login page solved, loading
+# 51.8 - form reset and redirect to specific page after loggin, !user can't see specific menu in NavBar, google login, 
+
+# 52.1 - 
+
 
 
 
