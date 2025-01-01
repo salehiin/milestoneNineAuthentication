@@ -49,7 +49,15 @@ export default Main;
 # 52.8 - navbar ready, right sidebar design, react icons
 # 52.9 - left sidebar design, data load, data display, id wise navigate to data details
 
-# 52_5.1 - 
+# 52_5.1 - concep, github
+# 52_5.2 - login, register form ready
+# 52_5.3 - context need to share multiple times(createContext/AuthProvider)
+# 52_5.4 - auth provider etc, login-logout conditional, useContext, authContext
+# 52_5.5 - data load using loader, if details is large like more than 200 then({details.slice(0, 200)}), navigate to id wise details page 
+# 52_5.6 - data display in details page - useParams, important concep - error handle(03:15), private route - if not logged in then navigate to login
+# 52_5.7 - important concept - setLoading(), after login auto navigate to the desired location - useLocation(), firebase environment variable, important concep - console.log environment variable, git status
+# 52_5.8 - first time - deploy firebase - very important - should follow, practice - travel guru
+# 52_5.rewards -  
 
 
 
